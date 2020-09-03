@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ConstructTree {
+//  前序遍历
+    public static Integer[] array1 = {3,0,0};
+
     public static TreeNode constructTree(Integer[] nums){
         if (nums.length == 0) return new TreeNode(0);
         Deque<TreeNode> nodeQueue = new LinkedList<>();
