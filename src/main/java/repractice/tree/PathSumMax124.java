@@ -1,4 +1,4 @@
-package tree;
+package repractice.tree;
 
 import org.junit.Test;
 
@@ -15,11 +15,13 @@ public class PathSumMax124 {
     }
 
     public int maxSum(TreeNode node){
-        if(node == null) return 0;
-//       这样排除负数
-        int left = Math.max(maxSum(node.left),0);
-        int right = Math.max(maxSum(node.right),0);
-        max = node.val + left + right;
-        return node.val + Math.max(left,right);
+        if(node==null) return 0;
+
+        int leftSum = Integer.max(maxSum(node.left),0);
+        int rightSum = Integer.max(maxSum(node.right),0);
+
+        int path = (leftSum + rightSum + node.val);
+        max = Integer.max(max,path);
+        return node.val + Math.max(leftSum,rightSum);
     }
 }
